@@ -5,9 +5,10 @@
 :set smarttab
 :set softtabstop=4
 :set mouse=a
-:set cursorline
+:set cursorline " highlight active line
 :set hlsearch
-:set clipboard+=unnamedplus
+:set clipboard+=unnamedplus " system clipboard
+:set completeopt-=preview " For No Previews
 
 call plug#begin()
 
@@ -28,23 +29,32 @@ set encoding=UTF-8
 
 call plug#end()
 
-" nnoremap <C-f> :NERDTreeFocus<CR>
+" keybindings#begin()
+" nerdtree
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
+" vim-commentary
+" tagbar
+nmap <F8> :TagbarToggle<CR>
+" neoformat
+nnoremap <silent><leader>F :Neoformat<CR>
+" vimspector
+nmap <Leader>db <Plug>VimspectorBreakpoints
+" coc-nvim
+" nnoremap <C-f> :NERDTreeFocus<CR>
 " nnoremap <F2> :call CocActionAsync('jumpDefinition')<CR>
+" nnoremap <F3> :call CocAction('jumpReferences')<CR>
+" nnoremap <F4> :CocCommand clangd.switchSourceHeader<CR>
 nnoremap <C-i> :call CocActionAsync('format')<CR>
+" other
 nnoremap <C-b> :!g++ -std=c++17 -Wall %<CR>
 nnoremap <C-r> :!g++ -std=c++17 -Wall % && ./a.out<CR>
 nnoremap <A-k> :move -2<CR>
 nnoremap <A-j> :move +1<CR>
-nnoremap <silent><leader>F :Neoformat<CR>
-" nnoremap <F3> :call CocAction('jumpReferences')<CR>
+inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
+" keybindings#end()
 
-nmap <F8> :TagbarToggle<CR>
-
-:set completeopt-=preview " For No Previews
-
-" :colorscheme jellybeans
+" vim colorscheme
 :colorscheme gruvbox
 
 let g:NERDTreeDirArrowExpandable="+"
@@ -80,10 +90,6 @@ let g:airline_symbols.linenr = ''
 
 " vimspector
 let g:vimspector_enable_mappings = 'HUMAN'
-nmap <Leader>db <Plug>VimspectorBreakpoints
-
-inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
-" nnoremap <F4> :CocCommand clangd.switchSourceHeader<CR>
 
 " --- Run formatter on save ---
 augroup fmt
