@@ -31,17 +31,17 @@ call plug#end()
 
 " keybindings#begin()
 " nerdtree
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <silent> nc :NERDTreeClose<CR>
+nnoremap <silent> nt :NERDTreeToggle<CR>
+nnoremap <silent> nf :NERDTreeFocus<CR>
 " vim-commentary
 " tagbar
-nmap <F8> :TagbarToggle<CR>
+nnoremap <silent> tt :TagbarToggle<CR>
 " neoformat
 nnoremap <silent><leader>F :Neoformat<CR>
 " vimspector
 nmap <Leader>db <Plug>VimspectorBreakpoints
 " coc-nvim
-" nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <silent> sh :CocCommand clangd.switchSourceHeader<CR>
 nnoremap <silent> gd <Plug>(coc-definition)
 nnoremap <silent> gy <Plug>(coc-type-definition)
