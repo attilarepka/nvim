@@ -42,14 +42,17 @@ nnoremap <silent><leader>F :Neoformat<CR>
 nmap <Leader>db <Plug>VimspectorBreakpoints
 " coc-nvim
 " nnoremap <C-f> :NERDTreeFocus<CR>
-" nnoremap <F2> :call CocActionAsync('jumpDefinition')<CR>
-" nnoremap <F3> :call CocAction('jumpReferences')<CR>
-" nnoremap <F4> :CocCommand clangd.switchSourceHeader<CR>
+nnoremap <silent> sh :CocCommand clangd.switchSourceHeader<CR>
 nnoremap <silent> gd <Plug>(coc-definition)
 nnoremap <silent> gy <Plug>(coc-type-definition)
 nnoremap <silent> gi <Plug>(coc-implementation)
 nnoremap <silent> gr <Plug>(coc-references)
 nnoremap <silent> gf <Plug>(coc-format)
+" Remap for rename current word
+nnoremap <leader>rn <Plug>(coc-rename)
+" Remap for format selected region
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 " nnoremap <C-i> :call CocActionAsync('format')<CR>
 " gcc build related
 nnoremap <C-b> :!g++ -std=c++17 -Wall %<CR>
@@ -61,11 +64,13 @@ nnoremap <A-j> :move +1<CR>
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-" other inoremap
-
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
 " keybindings#end()
 
 function! s:show_documentation()
@@ -88,8 +93,8 @@ let g:NERDTreeShowHidden=1
 "
 " :CocInstall coc-python
 " :CocInstall coc-clangd
-" :CocInstall coc-snippets
-" :CocCommand snippets.edit... FOR EACH FILE TYPE
+" :CocInstall coc-go
+" :CocInstall coc-highlight
 
 " air-line
 let g:airline_powerline_fonts = 1
