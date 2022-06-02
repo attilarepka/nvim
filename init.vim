@@ -51,13 +51,13 @@ nnoremap <silent> gi <Plug>(coc-implementation)
 nnoremap <silent> gr <Plug>(coc-references)
 nnoremap <silent> gf <Plug>(coc-format)
 " Remap for rename current word
-nmap <leader> rn <Plug>(coc-rename)
+nmap <leader>rn <Plug>(coc-rename)
 
 " TODO: These are currently not working
 nnoremap <C-LeftMouse> <Plug>(coc-definition)<CR>
 " Remap for format selected region
-xmap <leader> f <Plug>(coc-format-selected)
-nmap <leader> f <Plug>(coc-format-selected)
+xmap <leader>f <Plug>(coc-format-selected)
+nmap <leader>f <Plug>(coc-format-selected)
 
 " gcc build related
 nnoremap <C-b> :!g++ -std=c++17 -Wall %<CR>
