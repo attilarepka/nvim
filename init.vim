@@ -9,6 +9,7 @@
 :set hlsearch
 :set clipboard+=unnamedplus " system clipboard
 :set completeopt-=preview " For No Previews
+:set updatetime=1000 " symbol highlight timeout
 
 call plug#begin()
 
@@ -50,10 +51,14 @@ nnoremap <silent> gi <Plug>(coc-implementation)
 nnoremap <silent> gr <Plug>(coc-references)
 nnoremap <silent> gf <Plug>(coc-format)
 " Remap for rename current word
-nnoremap <leader>rn <Plug>(coc-rename)
+nmap <leader> rn <Plug>(coc-rename)
+
+" TODO: These are currently not working
+nnoremap <C-LeftMouse> <Plug>(coc-definition)<CR>
 " Remap for format selected region
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader> f <Plug>(coc-format-selected)
+nmap <leader> f <Plug>(coc-format-selected)
+
 " gcc build related
 nnoremap <C-b> :!g++ -std=c++17 -Wall %<CR>
 nnoremap <C-r> :!g++ -std=c++17 -Wall % && ./a.out<CR>
@@ -95,6 +100,9 @@ let g:NERDTreeShowHidden=1
 " :CocInstall coc-clangd
 " :CocInstall coc-go
 " :CocInstall coc-highlight
+"
+" C++ language server installation:
+" sudo apt install ccls
 
 " air-line
 let g:airline_powerline_fonts = 1
@@ -124,6 +132,9 @@ augroup fmt
   autocmd!
   autocmd BufWritePre * undojoin | Neoformat
 augroup END
+
+" --- Organize Go imports on save ---
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
 " --- Remove trailing whitespaces on save ---
 highlight ExtraWhitespace ctermbg=red guibg=red
