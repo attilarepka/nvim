@@ -40,7 +40,8 @@ nnoremap <silent> tt :TagbarToggle<CR>
 " neoformat
 nnoremap <silent><leader>F :Neoformat<CR>
 " vimspector
-nmap <Leader>db <Plug>VimspectorBreakpoints
+nnoremap <leader>da :call vimspector#Launch()<CR>
+nnoremap <leader>db <Plug>VimspectorBreakpoints
 " coc-nvim
 nnoremap <silent> sh :CocCommand clangd.switchSourceHeader<CR>
 nnoremap <silent> gd <Plug>(coc-definition)
@@ -53,7 +54,6 @@ nnoremap <leader>rn <Plug>(coc-rename)
 " Remap for format selected region
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
-" nnoremap <C-i> :call CocActionAsync('format')<CR>
 " gcc build related
 nnoremap <C-b> :!g++ -std=c++17 -Wall %<CR>
 nnoremap <C-r> :!g++ -std=c++17 -Wall % && ./a.out<CR>
