@@ -57,12 +57,24 @@ nnoremap <C-r> :!g++ -std=c++17 -Wall % && ./a.out<CR>
 " other nnoremap
 nnoremap <A-k> :move -2<CR>
 nnoremap <A-j> :move +1<CR>
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
 " other inoremap
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 " keybindings#end()
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 
 " vim colorscheme
 :colorscheme gruvbox
