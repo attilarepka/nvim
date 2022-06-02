@@ -45,12 +45,22 @@ nmap <Leader>db <Plug>VimspectorBreakpoints
 " nnoremap <F2> :call CocActionAsync('jumpDefinition')<CR>
 " nnoremap <F3> :call CocAction('jumpReferences')<CR>
 " nnoremap <F4> :CocCommand clangd.switchSourceHeader<CR>
-nnoremap <C-i> :call CocActionAsync('format')<CR>
-" other
+nnoremap <silent> gd <Plug>(coc-definition)
+nnoremap <silent> gy <Plug>(coc-type-definition)
+nnoremap <silent> gi <Plug>(coc-implementation)
+nnoremap <silent> gr <Plug>(coc-references)
+nnoremap <silent> gf <Plug>(coc-format)
+" nnoremap <C-i> :call CocActionAsync('format')<CR>
+" gcc build related
 nnoremap <C-b> :!g++ -std=c++17 -Wall %<CR>
 nnoremap <C-r> :!g++ -std=c++17 -Wall % && ./a.out<CR>
+" other nnoremap
 nnoremap <A-k> :move -2<CR>
 nnoremap <A-j> :move +1<CR>
+" other inoremap
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 " keybindings#end()
 
