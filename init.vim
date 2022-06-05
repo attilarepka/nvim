@@ -43,6 +43,7 @@ nnoremap <silent><leader>F :Neoformat<CR>
 " vimspector
 nnoremap <leader>da :call vimspector#Launch()<CR>
 nnoremap <leader>db <Plug>VimspectorBreakpoints
+nnoremap <leader>vr :call vimspector#Reset()<CR>
 " coc-nvim
 nnoremap <silent> sh :CocCommand clangd.switchSourceHeader<CR>
 nnoremap <silent> gd <Plug>(coc-definition)
