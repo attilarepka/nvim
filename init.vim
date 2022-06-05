@@ -60,8 +60,8 @@ xmap <leader>f <Plug>(coc-format-selected)
 nmap <leader>f <Plug>(coc-format-selected)
 
 " gcc build related
-nnoremap <C-b> :!g++ -std=c++17 -Wall %<CR>
-nnoremap <C-r> :!g++ -std=c++17 -Wall % && ./a.out<CR>
+nnoremap <silent><leader>bp :!g++ -std=c++17 -Wall %<CR>
+nnoremap <silent><leader>rp :!g++ -std=c++17 -Wall % && ./a.out<CR>
 " other nnoremap
 nnoremap <A-k> :move -2<CR>
 nnoremap <A-j> :move +1<CR>
@@ -143,3 +143,8 @@ au BufWinEnter * match ExtraWhitespace /\s\+$/
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhitespace /\s\+$/
 au BufWinLeave * call clearmatches()
+
+" --- setup Python3 support
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
+" python3 -m pip install pynvim
