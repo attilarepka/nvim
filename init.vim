@@ -26,6 +26,7 @@ Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
 Plug 'https://github.com/sbdchd/neoformat' " Cool formatter
 Plug 'https://github.com/puremourning/vimspector' " Live debugger
+Plug 'https://github.com/alpertuna/vim-header' " Adds headers to files
 set encoding=UTF-8
 
 call plug#end()
@@ -53,6 +54,8 @@ nnoremap <silent> gr <Plug>(coc-references)
 nnoremap <silent> gf <Plug>(coc-format)
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
+" vim-header
+nnoremap <silent> hh :AddHeader<CR>
 
 " TODO: These are currently not working
 nnoremap <C-LeftMouse> <Plug>(coc-definition)<CR>
@@ -149,3 +152,8 @@ au BufWinLeave * call clearmatches()
 let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python3'
 " python3 -m pip install pynvim
+
+" vim-header
+let g:header_field_author = 'Attila Repka'
+let g:header_field_author_email = 'attila@repka.hu'
+let g:header_field_copyright = 'placeholder copyright'
