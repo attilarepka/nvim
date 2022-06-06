@@ -164,6 +164,6 @@ let g:python3_host_prog = '/usr/bin/python3'
 let g:header_field_author = 'Some Author'
 let g:header_field_author_email = 'some@email.domain'
 let g:header_field_copyright = 'Some Copyright text'
+let g:header_field_timestamp_format = '%d %b %Y %H:%M:%S'
 let g:header_field_modified_timestamp = 0
 let g:header_field_modified_by = 0
-let g:header_field_timestamp_format = '%d-%m-%Y'
