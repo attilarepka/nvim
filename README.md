@@ -22,8 +22,15 @@ https://github.com/attilarepka/neovim-config
 
 ### Install vim-coc relevant files:
 
-```
+``` bash
 cd .local/share/nvim/plugged/
 sudo npm install -g yarn
 yarn install && yarn build
+```
+
+### FZF Installation
+
+``` bash
+sudo apt install silversearcher-ag
+sudo apt install ripgrep
 ```

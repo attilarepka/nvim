@@ -28,6 +28,8 @@ Plug 'https://github.com/sbdchd/neoformat' " Cool formatter
 Plug 'https://github.com/puremourning/vimspector' " Live debugger
 Plug 'https://github.com/alpertuna/vim-header' " Adds headers to files
 Plug 'https://github.com/ellisonleao/glow.nvim' " Markdown preview
+Plug 'https://github.com/junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'https://github.com/junegunn/fzf.vim' " Search in files
 set encoding=UTF-8
 
 call plug#end()
