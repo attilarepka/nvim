@@ -93,9 +93,12 @@ endfunction
 " vim colorscheme
 :colorscheme gruvbox
 
+" NERDTree
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
 let g:NERDTreeShowHidden=1
+" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 " --- Just Some Notes ---
 " :PlugClean :PlugInstall :UpdateRemotePlugins
