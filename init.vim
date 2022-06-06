@@ -27,6 +27,7 @@ Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple c
 Plug 'https://github.com/sbdchd/neoformat' " Cool formatter
 Plug 'https://github.com/puremourning/vimspector' " Live debugger
 Plug 'https://github.com/alpertuna/vim-header' " Adds headers to files
+Plug 'https://github.com/ellisonleao/glow.nvim' " Markdown preview
 set encoding=UTF-8
 
 call plug#end()
@@ -79,6 +80,9 @@ inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Glow toggle
+nnoremap <silent><leader>mp :Glow<CR>
 
 " keybindings#end()
 
