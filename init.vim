@@ -161,6 +161,9 @@ let g:python3_host_prog = '/usr/bin/python3'
 " python3 -m pip install pynvim
 
 " vim-header
-let g:header_field_author = 'Attila Repka'
-let g:header_field_author_email = 'attila@repka.hu'
-let g:header_field_copyright = 'placeholder copyright'
+let g:header_field_author = 'Some Author'
+let g:header_field_author_email = 'some@email.domain'
+let g:header_field_copyright = 'Some Copyright text'
+let g:header_field_modified_timestamp = 0
+let g:header_field_modified_by = 0
+let g:header_field_timestamp_format = '%d-%m-%Y'
