@@ -59,6 +59,9 @@ nnoremap <silent> gf <Plug>(coc-format)
 nmap <leader>rn <Plug>(coc-rename)
 " vim-header
 nnoremap <silent> hh :AddHeader<CR>
+" fzf
+nnoremap <silent> ff :Files<CR>
+nnoremap <silent> fr :Rg<CR>
 
 " TODO: These are currently not working
 nnoremap <C-LeftMouse> <Plug>(coc-definition)<CR>
