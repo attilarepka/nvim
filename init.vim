@@ -3,7 +3,8 @@
 :set tabstop=4
 :set shiftwidth=4
 :set smarttab
-:set softtabstop=4
+:set softtabstop=0
+:set expandtab
 :set mouse=a
 :set cursorline " highlight active line
 :set hlsearch
@@ -26,7 +27,8 @@ Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
 Plug 'https://github.com/sbdchd/neoformat' " Cool formatter
 Plug 'https://github.com/puremourning/vimspector' " Live debugger
-Plug 'https://github.com/alpertuna/vim-header' " Adds headers to files
+" Plug 'https://github.com/alpertuna/vim-header' " Adds headers to files
+Plug 'https://github.com/attilarepka/vim-header' " TODO: If PR accepted update link
 Plug 'https://github.com/ellisonleao/glow.nvim' " Markdown preview
 Plug 'https://github.com/junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'https://github.com/junegunn/fzf.vim' " Search in files
@@ -172,3 +174,6 @@ let g:header_field_copyright = 'Some Copyright text'
 let g:header_field_timestamp_format = '%d %b %Y %H:%M:%S'
 let g:header_field_modified_timestamp = 0
 let g:header_field_modified_by = 0
+let g:header_field_project = 'Some Project'
+let g:header_field_last_separator = 1
+let g:header_alignment = 0
