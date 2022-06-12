@@ -10,7 +10,7 @@
 :set hlsearch
 :set clipboard+=unnamedplus " system clipboard
 :set completeopt-=preview " For No Previews
-:set updatetime=1000 " symbol highlight timeout
+:set updatetime=200 " symbol highlight timeout
 
 call plug#begin()
 
