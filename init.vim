@@ -60,7 +60,7 @@ nnoremap <silent> gf <Plug>(coc-format)
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
 " vim-header
-nnoremap <silent> hh :AddHeader<CR>
+nnoremap <silent><leader>hh :AddHeader<CR>
 " fzf
 nnoremap <silent> ff :Files<CR>
 nnoremap <silent> fr :Rg<CR>
