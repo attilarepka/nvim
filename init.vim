@@ -57,6 +57,10 @@ nnoremap <silent> gy <Plug>(coc-type-definition)
 nnoremap <silent> gi <Plug>(coc-implementation)
 nnoremap <silent> gr <Plug>(coc-references)
 nnoremap <silent> gf <Plug>(coc-format)
+xmap <leader>a <Plug>(coc-codeaction-selected)
+nmap <leader>a <Plug>(coc-codeaction-selected)
+nmap <leader>ac <Plug>(coc-codeaction)
+nmap <leader>qf <Plug>(coc-fix-current)
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
 " vim-header
