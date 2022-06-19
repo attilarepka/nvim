@@ -34,3 +34,11 @@ yarn install && yarn build
 sudo apt install silversearcher-ag
 sudo apt install ripgrep
 ```
+
+### Clangd custom format properties
+
+Create a file under `~/.clang-format`:
+
+``` bash
+IndentWidth: 4
+```
