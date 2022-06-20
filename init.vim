@@ -167,6 +167,7 @@ au BufWinEnter * match ExtraWhitespace /\s\+$/
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhitespace /\s\+$/
 au BufWinLeave * call clearmatches()
+autocmd BufWritePre * :%s/\s\+$//e
 
 " --- setup Python3 support
 let g:python_host_prog = '/usr/bin/python'
