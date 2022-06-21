@@ -68,7 +68,7 @@ nnoremap <silent><leader>hh :AddHeader<CR>
 " fzf
 nnoremap <silent> ff :Files<CR>
 nnoremap <silent> fr :Rg<CR>
-nnoremap <silent> fb :Lines<CR>
+nnoremap <silent> fb :BLines<CR>
 
 " TODO: These are currently not working
 nnoremap <C-LeftMouse> <Plug>(coc-definition)<CR>
