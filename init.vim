@@ -32,6 +32,7 @@ Plug 'https://github.com/attilarepka/vim-header' " TODO: If PR accepted update l
 Plug 'https://github.com/ellisonleao/glow.nvim' " Markdown preview
 Plug 'https://github.com/junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'https://github.com/junegunn/fzf.vim' " Search in files
+Plug 'https://github.com/matze/vim-move' " Move blocks of text
 set encoding=UTF-8
 
 call plug#end()
@@ -79,9 +80,10 @@ nmap <leader>f <Plug>(coc-format-selected)
 " gcc build related
 nnoremap <silent><leader>bp :!g++ -std=c++17 -Wall %<CR>
 nnoremap <silent><leader>rp :!g++ -std=c++17 -Wall % && ./a.out<CR>
-" other nnoremap
-nnoremap <A-k> :move -2<CR>
-nnoremap <A-j> :move +1<CR>
+
+" vim-move keybindings
+let g:move_key_modifier = 'A'
+let g:move_key_modifier_visualmode = 'A'
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
