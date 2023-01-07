@@ -133,6 +133,7 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 " :CocInstall coc-highlight
 " :CocInstall coc-vimlsp
 " :CocInstall coc-angular coc-tsserver coc-eslint coc-json coc-prettier coc-css coc-html
+" :CocInstall coc-rust-analyzer
 
 " C++ language server installation:
 " sudo apt install ccls
