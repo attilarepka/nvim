@@ -1,7 +1,7 @@
 {
   "configurations": {
-    "FinMat": {
-      "adapter": "vscode-cpptools",
+    "debug": {
+      "adapter": "CodeLLDB",
       "configuration": {
         "type": "cppdbg",
         "request": "launch",

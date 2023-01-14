@@ -42,3 +42,11 @@ Create a file under `~/.clang-format`:
 ``` bash
 IndentWidth: 4
 ```
+
+### Vimspector gadgets
+
+`:VimspectorInstall <gadget>`
+
+Used gadgets:
+- CodeLLDB (Rust/C/C++)
+- delve (Go)

@@ -1,6 +1,6 @@
 {
   "configurations": {
-    "run": {
+    "debug": {
       "adapter": "delve",
       "filetypes": [ "go" ], // optional
       "variables": {
