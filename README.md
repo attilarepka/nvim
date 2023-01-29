@@ -10,7 +10,7 @@ https://github.com/neovim/neovim
 
 ### Install ctags for vim-tagbar:
 
-`sudo apt install exuberant-ctags`
+https://github.com/universal-ctags/ctags
 
 ### Config file located here:
 
