@@ -1,5 +1,9 @@
 {
   "clangd.path": "/usr/local/bin/clangd",
-  "clangd.fallbackFlags": [ "-std=c++17" ],
+  "clangd.fallbackFlags": ["-std=c++17"],
+  "clangd.arguments": [
+        "--background-index",
+        "--clang-tidy"
+    ],
   "rust-analyzer.rustfmt.rangeFormatting.enable": true
 }
