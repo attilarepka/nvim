@@ -28,16 +28,16 @@ $ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plu
 ### Install vim-coc relevant files:
 
 ``` bash
-cd .local/share/nvim/plugged/
-sudo npm install -g yarn
-yarn install && yarn build
+$ cd .local/share/nvim/plugged/
+$ sudo npm install -g yarn
+$ yarn install && yarn build
 ```
 
 ### FZF Installation
 
 ``` bash
-sudo apt install silversearcher-ag
-sudo apt install ripgrep
+$ sudo apt install silversearcher-ag
+$ sudo apt install ripgrep
 ```
 
 ### Clangd custom format properties
@@ -55,3 +55,13 @@ IndentWidth: 4
 Used gadgets:
 - CodeLLDB (Rust/C/C++)
 - delve (Go)
+
+### NERD fonts
+
+``` bash
+$ git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git
+$ cd nerd-fonts
+$ ./install.sh DejaVuSansMono
+```
+
+Afterwards activate NERD fonts in your terminal emulator
