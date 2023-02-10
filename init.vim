@@ -218,3 +218,8 @@ let g:tagbar_type_go = {
 	\ 'ctagsbin'  : 'gotags',
 	\ 'ctagsargs' : '-sort -silent'
 \ }
+
+" --- Glow setup
+lua << EOF
+require('glow').setup()
+EOF
