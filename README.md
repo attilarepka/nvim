@@ -12,6 +12,12 @@ https://github.com/neovim/neovim
 
 https://github.com/universal-ctags/ctags
 
+### Install gotags for Golang:
+
+``` bash
+$ go install github.com/jstemmer/gotags@latest
+```
+
 ### Config file located here:
 
 https://github.com/attilarepka/neovim-config
