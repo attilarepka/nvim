@@ -27,7 +27,6 @@ Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
 Plug 'https://github.com/sbdchd/neoformat' " Cool formatter
 Plug 'https://github.com/puremourning/vimspector' " Live debugger
-" Plug 'https://github.com/alpertuna/vim-header' " Adds headers to files
 Plug 'https://github.com/attilarepka/vim-header' " TODO: If PR accepted update link
 Plug 'https://github.com/ellisonleao/glow.nvim' " Markdown preview
 Plug 'https://github.com/junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -135,9 +134,6 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 " :CocInstall coc-angular coc-tsserver coc-eslint coc-json coc-prettier coc-css coc-html
 " :CocInstall coc-rust-analyzer
 
-" C++ language server installation:
-" sudo apt install ccls
-
 " air-line
 let g:airline_powerline_fonts = 1
 
@@ -182,7 +178,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 " --- setup Python3 support
 let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python3'
-" python3 -m pip install pynvim
 
 " vim-header
 let g:header_field_author = 'Some Author'

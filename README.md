@@ -42,7 +42,6 @@ $ yarn install && yarn build
 ### FZF Installation
 
 ``` bash
-$ sudo apt install silversearcher-ag
 $ sudo apt install ripgrep
 ```
 
@@ -71,3 +70,9 @@ $ ./install.sh DejaVuSansMono
 ```
 
 Afterwards activate NERD fonts in your terminal emulator
+
+### Python3 support
+
+``` bash
+$ python3 -m pip install pynvim
+```
