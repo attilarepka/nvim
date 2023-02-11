@@ -1,7 +1,5 @@
 # Neovim config
 
-
-
 ## Getting started
 
 ### Download latest dpkg from Releases:

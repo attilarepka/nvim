@@ -167,12 +167,9 @@ augroup END
 autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
 " --- Remove trailing whitespaces on save ---
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-au BufWinEnter * match ExtraWhitespace /\s\+$/
-au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-au InsertLeave * match ExtraWhitespace /\s\+$/
-au BufWinLeave * call clearmatches()
+highlight SpecialKey ctermfg=DarkGray
+set listchars=tab:>-,trail:~
+set list
 autocmd BufWritePre * :%s/\s\+$//e
 
 " --- setup Python3 support
