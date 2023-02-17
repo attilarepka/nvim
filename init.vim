@@ -25,7 +25,6 @@ Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
 Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
-Plug 'https://github.com/sbdchd/neoformat' " Cool formatter
 Plug 'https://github.com/puremourning/vimspector' " Live debugger
 Plug 'https://github.com/attilarepka/vim-header' " TODO: If PR accepted update link
 Plug 'https://github.com/ellisonleao/glow.nvim' " Markdown preview
@@ -44,8 +43,6 @@ nnoremap <silent> nf :NERDTreeFocus<CR>
 " vim-commentary
 " tagbar
 nnoremap <silent> tt :TagbarToggle<CR>
-" neoformat
-nnoremap <silent><leader>F :Neoformat<CR>
 " vimspector
 nnoremap <leader>da :call vimspector#Launch()<CR>
 nnoremap <leader>db <Plug>VimspectorBreakpoints
@@ -156,12 +153,6 @@ let g:airline_symbols.linenr = ''
 
 " vimspector
 let g:vimspector_enable_mappings = 'HUMAN'
-
-" --- Run formatter on save ---
-augroup fmt
-  autocmd!
-  autocmd BufWritePre * undojoin | Neoformat
-augroup END
 
 " --- Organize Go imports on save ---
 autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
