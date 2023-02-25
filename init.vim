@@ -130,6 +130,7 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 " :CocInstall coc-vimlsp
 " :CocInstall coc-angular coc-tsserver coc-eslint coc-json coc-prettier coc-css coc-html
 " :CocInstall coc-rust-analyzer
+" :CocInstall coc-git
 
 " air-line
 let g:airline_powerline_fonts = 1
