@@ -3,6 +3,7 @@
   "clangd.fallbackFlags": ["-std=c++17"],
   "clangd.arguments": ["--background-index", "--clang-tidy"],
   "rust-analyzer.rustfmt.rangeFormatting.enable": true,
+  "rust-analyzer.diagnostics.disabled": ["unresolved-proc-macro"],
   "git.addGBlameToVirtualText": true,
   "git.enableGutters": false,
   "coc.preferences.formatOnSaveFiletypes": ["*"]
