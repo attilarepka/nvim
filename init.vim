@@ -12,6 +12,7 @@
 :set clipboard+=unnamedplus " system clipboard
 :set completeopt-=preview " For No Previews
 :set updatetime=200 " symbol highlight timeout
+:set scrolloff=8
 
 call plug#begin()
 
