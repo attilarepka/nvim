@@ -1,76 +1,14 @@
-# Neovim config
+# Neovim configuration
 
 ## Getting started
 
-### Download latest dpkg from Releases:
+### get latest neovim from:
 
 https://github.com/neovim/neovim
 
-### Install ctags for vim-tagbar:
-
-https://github.com/universal-ctags/ctags
-
-### Install gotags for Golang:
+### Install [packer.nvim](https://github.com/wbthomason/packer.nvim)
 
 ``` bash
-$ go install github.com/jstemmer/gotags@latest
-```
-
-### Config file located here:
-
-https://github.com/attilarepka/neovim-config
-
-### Install vim-plug
-
-``` bash
-$ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-```
-
-`:PlugInstall`
-
-### Install vim-coc relevant files:
-
-``` bash
-$ cd .local/share/nvim/plugged/
-$ sudo npm install -g yarn
-$ yarn install && yarn build
-```
-
-### FZF Installation
-
-``` bash
-$ sudo apt install ripgrep
-```
-
-### Clangd custom format properties
-
-Create a file under `~/.clang-format`:
-
-``` bash
-IndentWidth: 4
-```
-
-### Vimspector gadgets
-
-`:VimspectorInstall <gadget>`
-
-Used gadgets:
-- CodeLLDB (Rust/C/C++)
-- delve (Go)
-
-### NERD fonts
-
-``` bash
-$ git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git
-$ cd nerd-fonts
-$ ./install.sh DejaVuSansMono
-```
-
-Afterwards activate NERD fonts in your terminal emulator
-
-### Python3 support
-
-``` bash
-$ python3 -m pip install pynvim
-```
+``git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim`
+ ```
