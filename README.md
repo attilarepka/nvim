@@ -13,16 +13,13 @@ https://github.com/neovim/neovim/releases/tag/stable
 ### Install [packer.nvim](https://github.com/wbthomason/packer.nvim)
 
 ``` bash
-``git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim`
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
  ```
 
  Sync plugins with `:PackerSync`
 
 ### Further todo(s):
 
-- [ ] nvim-tree/nvim-tree.lua
-- [ ] terrortylor/nvim-comment
-- [ ] norcalli/nvim-colorizer.lua
-- [ ] symbols-outline.nvim
 - [ ] mfussenegger/nvim-dap
+- [ ] theprimeagen/refactoring.nvim

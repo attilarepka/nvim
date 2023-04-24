@@ -1,4 +1,4 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
+-- This file can be loaded by calling `lua require('nvim.packer')` from your init.vim
 
 local ensure_packer = function()
     local fn = vim.fn
@@ -56,6 +56,10 @@ return require("packer").startup(function(use)
     }
 
     use({"ellisonleao/glow.nvim", config = function() require("glow").setup() end})
+
+    use({"terrortylor/nvim-comment", config = function() require('nvim_comment').setup() end})
+
+    use({"simrat39/symbols-outline.nvim", config = function() require("symbols-outline").setup() end})
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
