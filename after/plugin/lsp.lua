@@ -10,7 +10,7 @@ lsp.ensure_installed({
     'gopls',
     'clangd',
     'pyright',
-    -- 'robotframework-lsp'
+    'robotframework_ls'
 })
 
 -- Fix Undefined global 'vim'
@@ -67,11 +67,11 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.format_on_save({
-  servers = {
-    ['lua_ls'] = {'lua'},
-    ['rust_analyzer'] = {'rust'},
-    ['gopls'] = {'go'}
-  }
+    servers = {
+        ['lua_ls'] = { 'lua' },
+        ['rust_analyzer'] = { 'rust' },
+        ['gopls'] = { 'go' }
+    }
 })
 
 lsp.setup()
@@ -79,4 +79,3 @@ lsp.setup()
 vim.diagnostic.config({
     virtual_text = true
 })
-

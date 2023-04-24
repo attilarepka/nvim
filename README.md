@@ -8,7 +8,8 @@ https://github.com/neovim/neovim/releases/tag/stable
 
 ### Prerequisites
 
-- [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [ripgrep](https://github.com/BurntSushi/ripgrep) (telescope.nvim)
+- `sudo apt install python3-venv` (lsp: robotframework_ls)
 
 ### Install [packer.nvim](https://github.com/wbthomason/packer.nvim)
 
