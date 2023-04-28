@@ -43,3 +43,6 @@ end)
 
 -- close quickfix window
 vim.keymap.set("n", "<leader>q", "<cmd>cclose<cr>")
+
+-- switch between header/source
+vim.keymap.set("n", "<leader>sh", "<cmd>ClangdSwitchSourceHeader<cr>")
