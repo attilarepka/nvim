@@ -1,39 +1,39 @@
-local dap = require('dap')
-local widgets = require('dap.ui.widgets')
+local dap = require("dap")
+local widgets = require("dap.ui.widgets")
 
-vim.keymap.set('n', '<leader>vr', dap.terminate)
-vim.keymap.set('n', '<F5>', dap.continue)
-vim.keymap.set('n', '<F10>', dap.step_over)
-vim.keymap.set('n', '<F11>', dap.step_into)
-vim.keymap.set('n', '<F12>', dap.step_out)
-vim.keymap.set('n', '<leader>b', dap.toggle_breakpoint)
-vim.keymap.set('n', '<Leader>dr', function() dap.repl.open() end)
-vim.keymap.set('n', '<Leader>dl', function() dap.run_last() end)
-vim.keymap.set({ 'n', 'v' }, '<Leader>dh', function()
+vim.keymap.set("n", "<leader>vr", dap.terminate)
+vim.keymap.set("n", "<F5>", dap.continue)
+vim.keymap.set("n", "<F10>", dap.step_over)
+vim.keymap.set("n", "<F11>", dap.step_into)
+vim.keymap.set("n", "<F12>", dap.step_out)
+vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint)
+vim.keymap.set("n", "<Leader>dr", function() dap.repl.open() end)
+vim.keymap.set("n", "<Leader>dl", function() dap.run_last() end)
+vim.keymap.set({ "n", "v" }, "<Leader>dh", function()
     widgets.hover()
 end)
-vim.keymap.set({ 'n', 'v' }, '<Leader>dp', function()
+vim.keymap.set({ "n", "v" }, "<Leader>dp", function()
     widgets.preview()
 end)
-vim.keymap.set('n', '<Leader>df', function()
+vim.keymap.set("n", "<Leader>df", function()
     widgets.centered_float(widgets.frames)
 end)
-vim.keymap.set('n', '<Leader>ds', function()
+vim.keymap.set("n", "<Leader>ds", function()
     widgets.centered_float(widgets.scopes)
 end)
 
 dap.adapters.lldb = {
-    type = 'executable',
-    command = '/usr/bin/lldb-vscode-14', -- adjust as needed, must be absolute path TODO: proper README
-    name = 'lldb'
+    type = "executable",
+    command = "/usr/bin/lldb-vscode-14", -- adjust as needed, must be absolute path
+    name = "lldb"
 }
 
 dap.adapters.codelldb = {
-    type = 'server',
+    type = "server",
     port = "${port}",
     executable = {
         -- CHANGE THIS to your path!
-        command = 'codelldb', -- TODO: README
+        command = "codelldb",
         args = { "--port", "${port}" },
         -- On windows you may have to uncomment this:
         -- detached = false,
@@ -42,13 +42,13 @@ dap.adapters.codelldb = {
 
 dap.configurations.cpp = {
     {
-        name = 'Launch',
-        type = 'codelldb',
-        request = 'launch',
+        name = "Launch",
+        type = "codelldb",
+        request = "launch",
         program = function()
-            return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+            return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
         end,
-        cwd = '${workspaceFolder}',
+        cwd = "${workspaceFolder}",
         stopOnEntry = false,
         args = {},
         -- 💀
@@ -70,14 +70,12 @@ dap.configurations.cpp = {
 dap.configurations.c = dap.configurations.cpp
 dap.configurations.rust = dap.configurations.cpp
 
-
--- TODO: README
 dap.adapters.delve = {
-    type = 'server',
-    port = '${port}',
+    type = "server",
+    port = "${port}",
     executable = {
-        command = 'dlv',
-        args = { 'dap', '-l', '127.0.0.1:${port}' },
+        command = "dlv",
+        args = { "dap", "-l", "127.0.0.1:${port}" },
     }
 }
 
