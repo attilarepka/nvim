@@ -27,6 +27,8 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 -- unmap capital Q from normal mode
 vim.keymap.set("n", "Q", "<nop>")
 
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux new-window tmux-sessionizer<CR>")
+
 vim.keymap.set({ "n", "v" }, "<leader>fm", vim.lsp.buf.format)
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<cr>zz")

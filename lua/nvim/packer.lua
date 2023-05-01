@@ -40,7 +40,7 @@ return require("packer").startup(function(use)
             -- LSP Support
             { 'neovim/nvim-lspconfig' }, -- Required
             {
-                               -- Optional
+                -- Optional
                 'williamboman/mason.nvim',
                 run = function()
                     pcall(vim.cmd, 'MasonUpdate')
@@ -49,17 +49,19 @@ return require("packer").startup(function(use)
             { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
             -- Autocompletion
-            { 'hrsh7th/nvim-cmp' }, -- Required
+            { 'hrsh7th/nvim-cmp' },     -- Required
             { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-            { 'L3MON4D3/LuaSnip' }, -- Required
+            { 'L3MON4D3/LuaSnip' },     -- Required
         }
     }
 
-    use({"ellisonleao/glow.nvim", config = function() require("glow").setup() end})
+    use({ "ellisonleao/glow.nvim", config = function() require("glow").setup() end })
 
-    use({"terrortylor/nvim-comment", config = function() require('nvim_comment').setup() end})
+    use({ "terrortylor/nvim-comment", config = function() require('nvim_comment').setup() end })
 
-    use({"simrat39/symbols-outline.nvim", config = function() require("symbols-outline").setup() end})
+    use({ "simrat39/symbols-outline.nvim", config = function() require("symbols-outline").setup() end })
+
+    use({ "mfussenegger/nvim-dap" })
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

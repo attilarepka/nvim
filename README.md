@@ -10,6 +10,10 @@ https://github.com/neovim/neovim/releases/tag/stable
 
 - [ripgrep](https://github.com/BurntSushi/ripgrep) (telescope.nvim)
 - `sudo apt install python3-venv` (lsp: robotframework_ls)
+- `sudo apt install lldb` (dap: cpp/rust)
+- [codelldb](https://github.com/vadimcn/codelldb/releases/latest)
+(dap: cpp/rust -> copy dir `lldb` to `~/.local/lib/` and `adapter/codelldb + so` to `~/.local/bin/` and dir `formatters` to `~/.local/`)
+- `go install github.com/go-delve/delve/cmd/dlv@latest` (dap: go)
 
 ### Install [packer.nvim](https://github.com/wbthomason/packer.nvim)
 
