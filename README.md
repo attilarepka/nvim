@@ -26,5 +26,4 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 
 ### Further todo(s):
 
-- [ ] mfussenegger/nvim-dap
 - [ ] theprimeagen/refactoring.nvim
