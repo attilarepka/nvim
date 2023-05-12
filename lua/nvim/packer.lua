@@ -57,7 +57,12 @@ return require("packer").startup(function(use)
 
     use({ "ellisonleao/glow.nvim", config = function() require("glow").setup() end })
 
-    use({ "terrortylor/nvim-comment", config = function() require("nvim_comment").setup() end })
+    use({
+        "numToStr/Comment.nvim",
+        config = function()
+            require('Comment').setup()
+        end
+    })
 
     use({ "simrat39/symbols-outline.nvim", config = function() require("symbols-outline").setup() end })
 
