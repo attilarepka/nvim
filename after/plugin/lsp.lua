@@ -64,6 +64,7 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
     vim.keymap.set("n", "<leader>ac", function() vim.lsp.buf.code_action() end, opts)
+    vim.keymap.set("n", "<leader>vl", function() vim.lsp.buf.clear_references() end, opts)
 
     -- syntax hightlight on cursor
     if client.server_capabilities.documentHighlightProvider then
