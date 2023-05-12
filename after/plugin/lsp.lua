@@ -85,6 +85,7 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.format_on_save({
+    format_opts = {},
     servers = {
         ["lua_ls"] = { "lua" },
         ["rust_analyzer"] = { "rust" },
