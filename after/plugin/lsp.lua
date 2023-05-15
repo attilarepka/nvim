@@ -64,11 +64,10 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
     vim.keymap.set("n", "<leader>ac", function() vim.lsp.buf.code_action() end, opts)
-    vim.keymap.set("n", "<leader>vl", function() vim.lsp.buf.clear_references() end, opts)
 
     -- syntax hightlight on cursor
     if client.server_capabilities.documentHighlightProvider then
-        vim.api.nvim_create_augroup("lsp_document_highlight", { clear = true })
+        vim.api.nvim_create_augroup("lsp_document_highlight", { clear = false })
         vim.api.nvim_clear_autocmds { buffer = bufnr, group = "lsp_document_highlight" }
         vim.api.nvim_create_autocmd("CursorHold", {
             callback = vim.lsp.buf.document_highlight,
