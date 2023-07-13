@@ -1,4 +1,6 @@
-local header = require("header").setup({
+local header = require("header")
+
+header.setup({
     file_name = true,
     author = nil,
     project = nil,
@@ -8,3 +10,5 @@ local header = require("header").setup({
     copyright_text = nil,
 
 })
+
+vim.keymap.set("n", "<leader>hh", function() header.execute() end)
