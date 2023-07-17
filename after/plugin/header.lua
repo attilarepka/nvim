@@ -11,4 +11,4 @@ header.setup({
 
 })
 
-vim.keymap.set("n", "<leader>hh", function() header.execute() end)
+vim.keymap.set("n", "<leader>hh", function() header.add_headers() end)
