@@ -23,7 +23,3 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ```
 
  Sync plugins with `:PackerSync`
-
-### Further todo(s):
-
-- [ ] theprimeagen/refactoring.nvim
