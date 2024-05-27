@@ -48,3 +48,8 @@ vim.keymap.set("n", "<leader>q", "<cmd>cclose<cr>")
 
 -- switch between header/source
 vim.keymap.set("n", "<leader>sh", "<cmd>ClangdSwitchSourceHeader<cr>")
+
+-- diffget
+vim.keymap.set("n", "<leader>1", ":diffget LOCAL<CR>")
+vim.keymap.set("n", "<leader>2", ":diffget BASE<CR>")
+vim.keymap.set("n", "<leader>3", ":diffget REMOTE<CR>")
