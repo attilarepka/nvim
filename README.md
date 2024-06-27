@@ -1,25 +1,37 @@
-# Neovim configuration
+# Neovim Configuration
 
-## Getting started
-
-### Get latest [neovim](https://github.com/wbthomason/packer.nvim) from:
-
-https://github.com/neovim/neovim/releases/tag/stable
+## Getting Started
 
 ### Prerequisites
 
-- [ripgrep](https://github.com/BurntSushi/ripgrep) (telescope.nvim)
-- `sudo apt install python3-venv` (lsp: robotframework_ls)
-- `sudo apt install lldb` (dap: cpp/rust)
-- [codelldb](https://github.com/vadimcn/codelldb/releases/latest)
-(dap: cpp/rust -> copy dir `lldb` to `~/.local/lib/` and `adapter/codelldb + so` to `~/.local/bin/` and dir `formatters` to `~/.local/`)
-- `go install github.com/go-delve/delve/cmd/dlv@latest` (dap: go)
+- [ripgrep](https://github.com/BurntSushi/ripgrep) (required for `telescope.nvim`)
+- Install Python virtual environment:
+  
+  ```
+  sudo apt install python3-venv
+  ```
+  
+  (required for LSP: `robotframework_ls`)
 
-### Install [packer.nvim](https://github.com/wbthomason/packer.nvim)
+- Install LLDB:
+  
+  ```
+  sudo apt install lldb
+  ```
+  
+  (required for DAP: C++/Rust)
 
-``` bash
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
- ```
+- Download and set up [codelldb](https://github.com/vadimcn/codelldb/releases/latest) (required for DAP: C++/Rust):
+  
+  1. Copy the directory `lldb` to `~/.local/lib/`
+  2. Copy `adapter/codelldb` and the `so` file to `~/.local/bin/`
+  3. Copy the directory `formatters` to `~/.local/`
 
- Sync plugins with `:PackerSync`
+- Install Delve for Go:
+  
+  ```
+  go install github.com/go-delve/delve/cmd/dlv@latest
+  ```
+  
+  (required for DAP: Go)
+
