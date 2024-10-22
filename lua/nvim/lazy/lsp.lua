@@ -41,6 +41,25 @@ return {
             }
         })
 
+        -- Fix yaml formatter
+        lsp.configure("yamlls", {
+            on_attach = function(client, bufnr)
+                client.server_capabilities.documentFormattingProvider = true
+            end,
+            flags = lsp_flags,
+            capabilities = capabilities,
+            settings = {
+                yaml = {
+                    format = {
+                        enable = true
+                    },
+                    schemaStore = {
+                        enable = true
+                    }
+                }
+            }
+        })
+
         local cmp = require("cmp")
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
         local cmp_mappings = lsp.defaults.cmp_mappings({
