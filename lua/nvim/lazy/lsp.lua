@@ -60,6 +60,25 @@ return {
             }
         })
 
+        lsp.configure("rust_analyzer", {
+            settings = {
+                ["rust-analyzer"] = {
+                    checkOnSave = {
+                        command = "clippy",
+                        extraArgs = {
+                            "--",
+                            "--no-deps",
+                            "-Dclippy::correctness",
+                            "-Dclippy::complexity",
+                            "-Wclippy::perf",
+                            "-Wclippy::pedantic",
+                        },
+                        allFeatures = true,
+                    },
+                },
+            },
+        })
+
         local cmp = require("cmp")
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
         local cmp_mappings = lsp.defaults.cmp_mappings({
