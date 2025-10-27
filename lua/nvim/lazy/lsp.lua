@@ -50,6 +50,15 @@ return {
                     desc = "Clear All the References",
                 })
             end
+
+            lsp_zero.format_on_save({
+                format_opts = {},
+                servers = {
+                    ["lua_ls"] = { "lua" },
+                    ["rust_analyzer"] = { "rust" },
+                    ["gopls"] = { "go" }
+                }
+            })
         end)
 
         -- Mason setup
@@ -139,13 +148,6 @@ return {
                     require("luasnip").lsp_expand(args.body)
                 end,
             },
-        })
-
-        -- Format on save
-        vim.api.nvim_create_autocmd("BufWritePre", {
-            callback = function()
-                vim.lsp.buf.format({ async = false })
-            end,
         })
 
         -- Diagnostic visuals
