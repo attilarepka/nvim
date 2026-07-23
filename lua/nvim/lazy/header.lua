@@ -14,6 +14,6 @@ return {
 
         })
 
-        vim.keymap.set("n", "<leader>hh", function() header.add_headers() end)
+        vim.keymap.set("n", "<leader>hh", function() header.add_header() end)
     end
 }
