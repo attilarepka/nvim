@@ -1,0 +1,22 @@
+name: tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        neovim-version: [stable, nightly]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: rhysd/action-setup-vim@v1
+        with:
+          neovim: true
+          version: ${{ matrix.neovim-version }}
+      - name: Install Plenary
+        run: git clone --depth 1 https://github.com/nvim-lua/plenary.nvim "$RUNNER_TEMP/plenary.nvim"
+      - name: Run tests
+        run: make test
+        env:
+          PLENARY_DIR: ${{ runner.temp }}/plenary.nvim

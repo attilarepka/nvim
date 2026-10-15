@@ -5,14 +5,6 @@
 ### Prerequisites
 
 - [ripgrep](https://github.com/BurntSushi/ripgrep) (required for `telescope.nvim`)
-- Install Python virtual environment:
-  
-  ```
-  sudo apt install python3-venv
-  ```
-  
-  (required for LSP: `robotframework_ls`)
-
 - Install LLDB:
   
   ```
@@ -32,6 +24,12 @@
   ```
   go install github.com/go-delve/delve/cmd/dlv@latest
   ```
-  
+
   (required for DAP: Go)
 
+## Tests
+
+Run the headless configuration tests with `make test`. The tests require
+Neovim and Plenary; set `PLENARY_DIR` to the Plenary checkout if it is not
+installed at `~/.local/share/nvim/lazy/plenary.nvim`. GitHub Actions runs them
+against stable and nightly Neovim.

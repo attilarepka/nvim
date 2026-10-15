@@ -65,6 +65,7 @@ return {
                 if not keymaps_set then
                     -- Navigation
                     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+                    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
                     vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, opts)
                     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
                     vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
@@ -85,8 +86,8 @@ return {
 
                 -- Document highlight
                 if client.server_capabilities.documentHighlightProvider then
-                    vim.api.nvim_create_augroup("lsp_document_highlight", { clear = false })
-                    vim.api.nvim_clear_autocmds({ buffer = bufnr, group = "lsp_document_highlight" })
+                    local group = vim.api.nvim_create_augroup("lsp_document_highlight", { clear = false })
+                    vim.api.nvim_clear_autocmds({ buffer = bufnr, group = group })
                     vim.api.nvim_create_autocmd("CursorHold", {
                         callback = vim.lsp.buf.document_highlight,
                         buffer = bufnr,
@@ -103,8 +104,8 @@ return {
 
                 -- Format on save
                 if client.server_capabilities.documentFormattingProvider then
-                    vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
-                    vim.api.nvim_clear_autocmds({ buffer = bufnr, group = "lsp_format_on_save" })
+                    local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
+                    vim.api.nvim_clear_autocmds({ buffer = bufnr, group = group })
 
                     local format_filetypes = {
                         lua_ls = "lua",
@@ -113,7 +114,7 @@ return {
                     }
 
                     for server, filetype in pairs(format_filetypes) do
-                        if vim.bo.filetype == filetype and client.name == server then
+                        if vim.bo[bufnr].filetype == filetype and client.name == server then
                             vim.api.nvim_create_autocmd("BufWritePre", {
                                 callback = function()
                                     vim.lsp.buf.format({ async = false })
@@ -200,8 +201,57 @@ return {
                 capabilities = capabilities,
             }
 
+            vim.lsp.config("jsonls", {
+                cmd = { 'vscode-json-language-server', '--stdio' },
+                filetypes = { 'json', 'jsonc' },
+                init_options = {
+                    provideFormatter = true,
+                },
+                on_attach = on_attach,
+                capabilities = capabilities,
+            })
+
+            vim.lsp.config.ts_ls = {
+                cmd = { "typescript-language-server", "--stdio" },
+                filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+                on_attach = on_attach,
+                capabilities = capabilities,
+            }
+
+            vim.lsp.config.eslint = {
+                cmd = { "vscode-eslint-language-server", "--stdio" },
+                filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "html" },
+                on_attach = on_attach,
+                capabilities = capabilities,
+            }
+
+            vim.lsp.config.pylsp = {
+                cmd = { "pylsp" },
+                filetypes = { "python" },
+                on_attach = on_attach,
+                capabilities = capabilities,
+            }
+
+            vim.lsp.config.ruff_lsp = {
+                cmd = { "ruff-lsp" },
+                filetypes = { "python" },
+                on_attach = on_attach,
+                capabilities = capabilities,
+            }
+
             -- Enable all servers
-            vim.lsp.enable({ "lua_ls", "yamlls", "rust_analyzer", "gopls", "clangd" })
+            vim.lsp.enable({
+                "lua_ls",
+                "yamlls",
+                "rust_analyzer",
+                "gopls",
+                "clangd",
+                "jsonls",
+                "ts_ls",
+                "eslint",
+                "pylsp",
+                "ruff_lsp",
+            })
         end,
     },
     "L3MON4D3/LuaSnip",
